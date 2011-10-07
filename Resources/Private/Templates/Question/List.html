@@ -1,0 +1,54 @@
+<f:layout name="default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings 
+in /Configuration/Kickstarter/settings.yaml:
+	Resources:
+		Private: 
+			Templates:
+				List.html		keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the kickstarter
+
+<f:section name="main">
+
+    <f:flashMessages />
+
+    <h2 class="jpfaqCategory">{category}</h2>
+    <div class="jpfaqAll jpfaqShowAll{categoryUid}"><f:translate key="showAll" /></div>
+    <ul class="listCategory{categoryUid}">
+        <f:for each="{questions}" as="question">
+            <li>
+                <h3 class="toggleTrigger">{question.question}</h3>
+                <div class="toggleTriggerContainer{categoryUid}">
+                    <div class="jpfaqAnswer"><f:format.html parseFuncTSPath="lib.parseFunc">{question.answer}</f:format.html></div>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+    <script type="text/javascript"><![CDATA[
+        $(document).ready(function(){
+            // give showAll button a pointer as cursor
+            $('.jpfaqShowAll]]>{categoryUid}<![CDATA[').css({'cursor':'pointer'});
+            //Hide (Collapse) the toggle containers on load
+            $('ul.listCategory]]>{categoryUid}<![CDATA[ h3.toggleTrigger').next().hide();
+            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
+            $('ul.listCategory]]>{categoryUid}<![CDATA[ h3.toggleTrigger').click(function(){
+                $(this).next().toggleClass("active").slideToggle('fast');
+                // set class to change + - image
+                $(this).toggleClass("questionUnfolded");
+            });
+            // show all answers of this category
+            $('.jpfaqShowAll]]>{categoryUid}<![CDATA[').click(function(){
+            $('.toggleTriggerContainer]]>{categoryUid}<![CDATA[').toggleClass("active").slideToggle('fast');
+            // set class to change + - image
+            $(this).toggleClass("questionUnfolded");
+            // set class for each question also to change + - image
+            $('ul.listCategory]]>{categoryUid}<![CDATA[ h3.toggleTrigger').toggleClass("questionUnfolded");
+            });
+        });
+    ]]></script>
+
+</f:section>
