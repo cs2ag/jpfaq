@@ -6,6 +6,18 @@ Date: may 2011
 ***********************************************************
 */
 
+.tx-jpfaq-pi1 fieldset {
+    margin-bottom:10px;
+}
+
+.tx-jpfaq-pi1 legend {
+    display:none;
+}
+
+.tx-jpfaq-pi1 label {
+    font-weight: bold;
+}
+
 .tx-jpfaq-pi1 ul {
     margin:0;
     padding:0;
@@ -35,13 +47,17 @@ Date: may 2011
     cursor:pointer;
 }
 
-
 .tx-jpfaq-pi1 .jpfaqAll {
-   background: url('../Img/all_plus.png') no-repeat left center;
-   padding-left:20px;
-   margin-bottom:10px;
+    margin-bottom:10px;
 }
 
-.tx-jpfaq-pi1 .jpfaqAll.questionUnfolded {
+.tx-jpfaq-pi1 .jpfaqShowAll,
+.tx-jpfaq-pi1 .jpfaqHideAll {
+   background: url('../Img/all_plus.png') no-repeat left center;
+   padding-left:20px;
+   cursor:pointer;
+}
+
+.tx-jpfaq-pi1 .jpfaqHideAll {
    background: url('../Img/all_min.png') no-repeat left center;
 }

@@ -79,7 +79,7 @@ $TCA['tx_jpfaq_domain_model_question'] = array(
 				'rows' => 15,
 				'eval' => 'trim,required'
 			),
-                        'defaultExtras' => 'richtext[*]'
+      'defaultExtras' => 'richtext[*]:rte_transform[mode=ts]'
 		),
 		'category' => array(
 			'exclude'	=> 0,

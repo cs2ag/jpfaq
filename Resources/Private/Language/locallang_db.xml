@@ -15,6 +15,7 @@
       <label index="flexform.sheet_main">Configuration</label>
       <label index="flexform.selectCategory">Choose category</label>
       <label index="flexform.selectPid">Choose page or folder with records</label>
+    <label index="flexform.showSearch">Show searchbox (searches all questions on page)</label>
 		</languageKey>
 		<languageKey index="ru" type="array">
 			<label index="tx_jpfaq_domain_model_question">Вопрос</label>
@@ -37,6 +38,7 @@
       <label index="flexform.sheet_main">Configuratie</label>
       <label index="flexform.selectCategory">Kies categorie</label>
       <label index="flexform.selectPid">Kies pagina of folder met records</label>
+        <label index="flexform.showSearch">Toon zoekbox (doorzoekt alle vragen op pagina)</label>
 		</languageKey>
     <languageKey index="fr" type="array">
 			<label index="tx_jpfaq_domain_model_question">Question</label>

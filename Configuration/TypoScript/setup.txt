@@ -5,13 +5,12 @@ plugin.tx_jpfaq {
 		partialRootPath = {$plugin.tx_jpfaq.view.partialRootPath}
 		layoutRootPath = {$plugin.tx_jpfaq.view.layoutRootPath}
 	}
-        includeCss {
+    includeCss {
         file1.path=EXT:Resources/Public/Css/jpfaq.css
         file1.mediatype=all
         }
-        includeJs {        
-        file1.path=EXT:Resources/Public/Js/jquery152.min.js
-        }
-    }
+    includeJquery.path=EXT:Resources/Public/Js/jquery152.min.js
+    includeQuicksearch.path=EXT:Resources/Public/Js/quicksearch.js
+   }
 }
 
