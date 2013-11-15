@@ -42,16 +42,37 @@ class Tx_Jpfaq_Controller_QuestionController extends Tx_Extbase_MVC_Controller_A
     protected $questionRepository;
 
     /**
+     * Injection of question repository
+     *
+     * @param Tx_Jpfaq_Domain_Repository_QuestionRepository $questionRepository
+     */
+    public function injectQuestionRepository(Tx_Jpfaq_Domain_Repository_QuestionRepository $questionRepository){
+        $this->questionRepository = $questionRepository;
+    }
+
+    /**
+     * Category repository
+     *
+     * @var Tx_Jpfaq_Domain_Repository_CategoryRepository
+     */
+    protected $categoryRepository;
+
+    /**
+     * Injection of category repository
+     *
+     * @param Tx_Jpfaq_Domain_Repository_CategoryRepository $categoryRepository
+     */
+    public function injectCategoryRepository(Tx_Jpfaq_Domain_Repository_CategoryRepository $categoryRepository){
+        $this->categoryRepository = $categoryRepository;
+    }
+
+    /**
      * Initializes the current action
      *
      * @return void
      */
     protected function initializeAction()
     {
-        $this->questionRepository = t3lib_div::makeInstance('Tx_Jpfaq_Domain_Repository_QuestionRepository');
-        $this->categoryRepository = t3lib_div::makeInstance('Tx_Jpfaq_Domain_Repository_CategoryRepository');
-
-
         // stylesheets includes in header
         $includes = '';
         foreach ($this->settings["includeCss"] as $cssFile) {

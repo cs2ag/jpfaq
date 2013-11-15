@@ -41,6 +41,7 @@ class Tx_Jpfaq_Domain_Repository_QuestionRepository extends Tx_Extbase_Persisten
      *  Get all questions for a categoryUID
      * 
      * @param integer $categoryUID
+     * @param integer $flexformPid
      */
     public function getAllQuestionsForCategory($categoryUID, $flexformPid) {
         $query = $this->createQuery();
