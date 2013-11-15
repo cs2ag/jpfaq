@@ -150,7 +150,7 @@ class Tx_Jpfaq_Controller_QuestionController extends Tx_Extbase_MVC_Controller_A
 
         //set fold / unfold js
         $js = <<<HEREDOC
-        $(document).ready(function(){
+        jQuery(document).ready(function($){
             $('.jpfaqHide$selectedCategory').hide();
             $('ul.listCategory$selectedCategory .toggleTrigger').next().hide();
             $('ul.listCategory$selectedCategory .toggleTrigger').click(function(){
